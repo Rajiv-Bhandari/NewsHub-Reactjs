@@ -7,7 +7,7 @@ export class NewsItems extends Component {
     return (
       <div className='my-3'>
         <div className="card" style={{width: "18rem"}}>
-            <img src={imageUrl} className="card-img-top" alt="..."/>
+            <img src={!imageUrl?"https://ichef.bbci.co.uk/news/1024/branded_news/92DF/production/_132699573_gettyimages-1929775267-1.jpg ":imageUrl} className="card-img-top" alt="..."/>
             <div className="card-body">
                 <h5 className="card-title">{title}...</h5>
                 <p className="card-text">{description}...</p>
