@@ -1,7 +1,7 @@
 import './App.css';
 
 // class based component
-import React, { Component } from 'react'
+import React from 'react'
 import NavBar from './components/navBar';
 import News from './components/News';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
