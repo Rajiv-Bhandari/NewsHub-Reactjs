@@ -18,7 +18,7 @@ class App extends Component {
 
   render() {
     const pageSize = 12;
-
+    const apiKey = process.env.REACT_APP_NEWS_API;
     return (
       <div>
         <Router>
@@ -35,6 +35,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={apiKey}
                   key="general"
                   pageSize={pageSize}
                   country="us"
@@ -48,6 +49,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={apiKey}
                   key="business"
                   pageSize={pageSize}
                   country="us"
@@ -61,6 +63,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={apiKey}
                   key="entertainment"
                   pageSize={pageSize}
                   country="us"
@@ -74,6 +77,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={apiKey}
                   key="health"
                   pageSize={pageSize}
                   country="us"
@@ -87,6 +91,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={apiKey}
                   key="science"
                   pageSize={pageSize}
                   country="us"
@@ -100,6 +105,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={apiKey}
                   key="sports"
                   pageSize={pageSize}
                   country="us"
@@ -113,6 +119,7 @@ class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
+                  apiKey={apiKey}
                   key="technology"
                   pageSize={pageSize}
                   country="us"
