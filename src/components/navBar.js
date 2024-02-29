@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const [liveTime, setLiveTime] = useState(new Date().toLocaleTimeString());
@@ -18,40 +18,40 @@ const NavBar = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <NavLink className="navbar-brand" to="/" exact>
             NewsHub
-          </Link>
+          </NavLink>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" to="/business">
+                <NavLink className="nav-link" to="/business">
                   Business
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/entertainment">
+                <NavLink className="nav-link" to="/entertainment">
                   Entertainment
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/health">
+                <NavLink className="nav-link" to="/health">
                   Health
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/science">
+                <NavLink className="nav-link" to="/science">
                   Science
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/sports">
+                <NavLink className="nav-link" to="/sports">
                   Sports
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/technology">
+                <NavLink className="nav-link" to="/technology">
                   Technology
-                </Link>
+                </NavLink>
               </li>
             </ul>
             <div
