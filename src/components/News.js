@@ -9,9 +9,6 @@ const News = (props) => {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
-  // document.title = `NewsHub - ${this.capitalizeFirstLetter(
-  //   props.category
-  // )}`;
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -32,7 +29,9 @@ const News = (props) => {
   };
 
   useEffect(() => {
+    document.title = `NewsHub - ${capitalizeFirstLetter(props.category)}`;
     updateNews();
+    // eslint-disable-next-line
   }, []);
 
   // handlePrevClick = () => {
@@ -47,8 +46,12 @@ const News = (props) => {
   //   });
   // };
   const fetchMoreData = async () => {
+    const url = `https://newsapi.org/v2/top-headlines?country=${
+      props.country
+    }&category=${props.category}&apiKey=${props.apiKey}&page=${
+      page + 1
+    }&pageSize=${props.pageSize}`;
     setPage(page + 1);
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json();
     setArticles(articles.concat(parsedData.articles));
@@ -57,7 +60,10 @@ const News = (props) => {
 
   return (
     <div className="container my-3">
-      <h1 className="text-center" style={{ margin: "35px 0px" }}>
+      <h1
+        className="text-center"
+        style={{ margin: "35px 0px", marginTop: "90px" }}
+      >
         NewsHub - Top Headlines on {capitalizeFirstLetter(props.category)}
       </h1>
       {loading && <Spinner />}
